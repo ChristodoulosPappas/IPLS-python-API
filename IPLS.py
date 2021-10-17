@@ -5,6 +5,7 @@ import struct
 import time
 import random
 import numpy as np
+import os
 from os.path import expanduser
 from os import path
 
@@ -123,7 +124,7 @@ class IPLS:
 			os.mkdir(home+"/IPLS")
 
 		data = struct.pack('!' + len(model)*'d',*model)
-		fd = open(home+"/IPLS/" + file,'w');
+		fd = open(home+"/IPLS/" + file.decode(),'wb');
 		fd.write(data);
 		fd.close();
 
